@@ -4,6 +4,12 @@ services:
     restart: always
     image: pastagringo/loragtwpktfwd
     privileged: true
+  args:
+    - LORA_REGION=US915
+    - LORA_UDP=1680 #default "1680"
+    #- SPI_SPEED=8000000 #default 2000000
+    #- PIN_RESET=11
+    - MINER_URL=helium-miner #default "helium-miner"
   helium_miner:
     restart: always
     image: quay.io/team-helium/miner:miner-arm64_2020.07.29.0_GA

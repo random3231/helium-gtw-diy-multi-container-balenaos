@@ -1,14 +1,15 @@
-version: '2.1'
+version: "2.1"
 services:
   loragtwpktfwd:
     restart: always
     image: pastagringo/loragtwpktfwd
-    build:
-      args:
-        LORA_REGION: US915
-        LORA_UDP: '1680'
-        MINER_URL: helium-miner
     privileged: true
+  build:
+    args:
+      LORA_REGION: US915
+      LORA_UDP: '1680'
+      MINER_URL: helium-miner
+      privileged: true
   helium-miner:
     restart: always
     image: 'quay.io/team-helium/miner:miner-arm64_2020.07.29.0_GA'

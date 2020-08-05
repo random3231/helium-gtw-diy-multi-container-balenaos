@@ -1,27 +1,25 @@
-version: "2.1"
+version: '2.1'
 services:
   loragtwpktfwd:
     restart: always
-    image: pastagringo/loragtwpktfwd
+    build:
+      context: loragtwpktfwd
+      args:
+        LORA_REGION: US915
+        LORA_UDP: '1680'
+        MINER_URL: helium-miner
     privileged: true
-  args:
-    - LORA_REGION=US915
-    - LORA_UDP=1680 #default "1680"
-    #- SPI_SPEED=8000000 #default 2000000
-    #- PIN_RESET=11
-    - MINER_URL=helium-miner #default "helium-miner"
-  helium_miner:
+  helium-miner:
     restart: always
-    image: quay.io/team-helium/miner:miner-arm64_2020.07.29.0_GA
+    image: 'quay.io/team-helium/miner:miner-arm64_2020.07.29.0_GA'
     ports:
-      - "44158:44158/tcp"
-      - "1680:1680/udp"
+      - '44158:44158/tcp'
+      - '1680:1680/udp'
     volumes:
       - 'miner-data:/var/data'
       - 'miner-log:/var/log/miner'
     environment:
-      - 'REGION_OVERRIDE=US915'
-
+      REGION_OVERRIDE: US915
 volumes:
-  miner-data:
-  miner-log:
+  miner-data: {}
+  miner-log: {}

@@ -15,6 +15,12 @@ services:
       - 'miner-log:/var/log/miner'
     environment:
       - 'REGION_OVERRIDE=US915'
+    args:
+      - LORA_REGION=US915
+      - LORA_UDP=1680 #default "1680"
+      #- SPI_SPEED=8000000 #default 2000000
+      #- PIN_RESET=11
+      - MINER_URL=helium-miner #default "helium-miner"
 
 volumes:
   miner-data:

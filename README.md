@@ -10,7 +10,7 @@ Deploy a DIY Helium LoRa gateway running the miner inside the board. We are usin
 
 ## Getting started
 
-### LoRa has been configured for EU region !
+### LoRa has been configured for US region !
 
 ### Hardware
 
@@ -32,6 +32,6 @@ Once all of this is ready, you are able to deploy this repository following inst
 
 Running this project is as simple as deploying it to a balenaCloud application. You can do it in just one click by using the button below:
 
-[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/PastaGringo/helium-gtw-diy-multi-container-balenaos)
+[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/random3231/helium-gtw-diy-multi-container-balenaos)
 
 Follow instructions, click Add a Device and flash an SD card with that OS image dowloaded from balenaCloud. Enjoy the magic 🌟Over-The-Air🌟!

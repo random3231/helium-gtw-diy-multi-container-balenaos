@@ -2,6 +2,7 @@ version: '2.1'
 services:
   loragtwpktfwd:
     restart: always
+    image: pastagringo/loragtwpktfwd
     build:
       context: loragtwpktfwd
       args:
